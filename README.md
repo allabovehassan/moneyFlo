@@ -44,7 +44,7 @@ npm install
 npm start
 ```
 
-### 1. APIs 
+# 1. APIs 
 
 ## 1. Signup 
  **POST**
