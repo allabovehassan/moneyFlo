@@ -15,7 +15,7 @@ function authenticator(req, res, next) {
 
       jwt.verify(
         token,
-        process.env.key,
+        process.env.KEY,
       (err, decoded) => {
         if (err) {
           return res.status(401).send({
