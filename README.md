@@ -103,3 +103,5 @@ npm start
 http://localhost:7070/api/invoice/view-quotations
 
 ```
+## Sample Pdf Output
+
