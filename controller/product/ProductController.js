@@ -54,6 +54,7 @@ async function createProduct(req, res) {
       userName,
       savedProducts
     );
+
     invoice.pdfUrl = pdfUrl;
     invoice.imageUrl = imageUrl;
 
