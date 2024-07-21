@@ -47,7 +47,7 @@ npm start
 ### 1. APIs 
 
  1. Signup 
- POST
+ **POST**
  ```
  http://localhost:7070/api/user/signup
 
@@ -60,7 +60,7 @@ npm start
 ```
 
  2. Login 
- POST
+ **POST**
  ```
  http://localhost:7070/api/user/login
 
@@ -71,8 +71,8 @@ npm start
 
 ```
  3. Create/Add Products and generate PDFs and Images 
- POST
- Description:- It requires token and needs to be passed from headers
+ **POST**
+ ### Description:- It requires token and needs to be passed from headers
  ```
  http://localhost:7070/api/product
 
@@ -97,8 +97,8 @@ npm start
 ```
 
  4. View Quotations
- GET
- Description:- It requires token and needs to be passed from headers
+ **GET**
+ ### Description:- It requires token and needs to be passed from headers
  ```
 http://localhost:7070/api/invoice/view-quotations
 
