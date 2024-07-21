@@ -106,3 +106,5 @@ http://localhost:7070/api/invoice/view-quotations
 ## Sample Pdf Output
 ![Image](./images/invoice-669d34cdda0c8d6ba2ad717b.png)
 
+### Deployed Url
+https://moneyflo.onrender.com/api/product
