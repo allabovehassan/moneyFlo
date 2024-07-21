@@ -3,7 +3,11 @@ const fs = require("fs");
 const path = require("path");
 const messages = require("../utils/messages");
 
-async function generateInvoice(invoice, products) {
+async function generateInvoice(
+  invoice,
+  name,
+  products
+) {
   try {
     let browser = await puppeteer.launch({
       headless: true,
@@ -11,7 +15,6 @@ async function generateInvoice(invoice, products) {
     });
 
     let page = await browser.newPage();
-
     const htmlContent = `
       <html>
       <head>
@@ -49,6 +52,7 @@ async function generateInvoice(invoice, products) {
       <body>
         <h1>Invoice</h1>
         <p>User ID: ${invoice.userId}</p>
+        <p>Name: ${name}</p>
         <p>Date: ${invoice.date.toDateString()}</p>
         <h2>Products</h2>
         <table>
@@ -112,16 +116,15 @@ async function generateInvoice(invoice, products) {
       "../images"
     );
 
-
     if (!fs.existsSync(pdfDirectory)) {
       fs.mkdirSync(pdfDirectory, { recursive: true });
       console.log("PDF directory created.");
     }
-     if (!fs.existsSync(imageDirectory)) {
-       fs.mkdirSync(imageDirectory, {
-         recursive: true
-       });
-     }
+    if (!fs.existsSync(imageDirectory)) {
+      fs.mkdirSync(imageDirectory, {
+        recursive: true
+      });
+    }
     const pdfPath = path.join(
       pdfDirectory,
       `invoice-${invoice._id}.pdf`

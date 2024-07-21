@@ -4,6 +4,7 @@ const {
 const {
   Invoice
 } = require("../../model/invoiceModel.js");
+const { User } = require("../../model/userModel.js");
 const messages = require("../../utils/messages.js");
 const { default: mongoose } = require("mongoose");
 const {
@@ -35,6 +36,10 @@ async function createProduct(req, res) {
     const savedProducts = await Product.insertMany(
       products
     );
+    const user = await User.findById(
+      new mongoose.Types.ObjectId(req.user.id)
+    ).select("name -_id");
+    const userName = user ? user.name : "Unknown";
 
     // Create a new invoice
     const invoice = new Invoice({
@@ -46,6 +51,7 @@ async function createProduct(req, res) {
     // Generate PDF and get the PDF URL
     const { pdfUrl, imageUrl } = await generateInvoice(
       invoice,
+      userName,
       savedProducts
     );
     invoice.pdfUrl = pdfUrl;
