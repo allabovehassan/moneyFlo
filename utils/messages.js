@@ -29,5 +29,5 @@ module.exports = Object.freeze({
   LOGIN_SUCCESSFULLY: "login Sucessfully",
   LOGOUT_SUCCESSFULLY: "logout Sucessfully",
   NO_TOKEN_PROVIDED: "token not found in headers",
-  LOGIN_AGAIN: "PLease Login Again"
+  LOGIN_AGAIN: "Please Login Again"
 });
